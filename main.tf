@@ -35,12 +35,12 @@ data "aws_ami" "amazon_linux" {
   owners = ["amazon"]
 }
 
-#resource "aws_instance" "example" {
-#  ami           = data.aws_ami.amazon_linux.id
-#  instance_type = "t2.small"
-#
-#  tags = {
-#    Name = "terraform-ec2-instance"
-#  }
-#}
+resource "aws_instance" "example" {
+  ami           = data.aws_ami.amazon_linux.id
+  instance_type = "t2.small"
+
+  tags = {
+    Name = "terraform-ec2-instance"
+  }
+}
 
